@@ -1,0 +1,73 @@
+body{
+    background-color: lightblue;
+}
+
+#main-h1 {
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: lightsteelblue;
+    border-radius: 12px;
+}
+
+#logo img {
+  width: 30%;
+  height: 20%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+#main-h2 {
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: overline;
+    background-color:lightsteelblue;
+    border-radius: 12px;
+}
+
+.post-form {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background-color: lightcyan;
+    border-radius: 12px;
+}
+
+#post-title {
+    flex: 1 1 12rem;
+    background-color: lightyellow;
+    border-radius: 12px;
+}
+
+#post-text  {
+    flex: 2 1 24rem;
+    background-color: lightyellow;
+    border-radius: 12px;
+}
+#create-post {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    background-color: lightyellow;
+    border-radius: 12px;
+}
+
+#all-posts {
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: lightsteelblue;
+    border-radius: 12px;
+}
+
+#posts {
+    text-align: center;
+}
+
+.update-btn {
+    background-color: lightyellow;
+}
+
+.delete-btn {
+    background-color: sandybrown;
+}
+

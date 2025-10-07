@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <title>Blog Web App</title>
+</head>
+
+<body>
+<div id="main-h1">
+<h1> <%- "The Blog Web Application"  %> </h1>
+</div>
+
+<div id="logo">
+<img src="/images/earth.jpg" alt="logo"/>
+</div>
+
+<div id="main-h2">
+<h2> <%- "Express your ideas." %> </h2>
+</div>
+
+<form class="post-form" action="/" method="post">
+  <textarea name="post-title" id="post-title" rows="1" placeholder="Enter post title" required></textarea>
+  <textarea name="post-text" id="post-text" rows="3" placeholder="Enter text" required></textarea>
+  <button type="submit" id="create-post">Create Post</button>
+</form>
+
+<div id="all-posts">
+<h2> All posts </h2>
+</div>
+
+<ul id="posts">
+    <% posts.forEach(p => { %>
+        <li id="post-<%= p.id %>">
+            <form action="/<%= p.id %>/update" method="post" class="update-form" style="display:inline">
+                <h3 class="list-title">
+                    <textarea
+                        class="real-posts"
+                        name="title"
+                        id="edit-title-<%= p.id %>"
+                        rows="1"
+                        required
+                    ><%= p.title %></textarea>
+                </h3>
+                <p class="list-text">
+                    <textarea
+                        class="real-posts"
+                        name="body"
+                        id="edit-body-<%= p.id %>"
+                        rows="3"
+                        required
+                    ><%= p.body %></textarea>
+                </p>
+                <button type="submit" class="update-btn">Update post</button>
+            </form>
+            <form action="/<%= p.id %>" method="post" style="display:inline">
+                <button type="submit" class="delete-btn" data-id="<%= p.id %>">Delete post</button>
+            </form>
+        </li>
+    <% }) %>
+</ul>
+
+<%- include("partials/footer.ejs") %>
+
+<script>
+  const autoGrow = el => { el.style.height = 'auto'; el.style.height = el.scrollHeight + 'px'; };
+  document.querySelectorAll('textarea').forEach(t => {
+    autoGrow(t);
+    t.addEventListener('input', () => autoGrow(t));
+  });
+</script>
+
+</body>
+
+  <main>
+
+
+
